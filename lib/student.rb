@@ -57,6 +57,6 @@ class Student
   end
 
   def self.create(name, grade)
-
+    new_obj = self.new(name, grade)
   end
 end
