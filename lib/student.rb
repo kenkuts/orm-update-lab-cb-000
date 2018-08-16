@@ -61,4 +61,6 @@ class Student
     new_obj.save
     new_obj
   end
+
+  def self.new_from_db
 end
