@@ -63,10 +63,7 @@ class Student
   end
 
   def self.new_from_db(row)
-    binding.pry
-    row.each do |data|
-      self.new(data[0], data[1], data[2])
-    end
+    self.new(row[0], row[1], row[2])
   end
 
 end
