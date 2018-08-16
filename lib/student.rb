@@ -63,6 +63,8 @@ class Student
   end
 
   def self.new_from_db(row)
-    row.map
+    row.map do |data|
+
+    end
   end
 end
