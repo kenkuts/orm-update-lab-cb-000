@@ -67,5 +67,5 @@ class Student
       self.new(data[0], data[1], data[2])
     end
   end
-  
+
 end
