@@ -71,5 +71,7 @@ class Student
       SELECT * FROM students
       WHERE name = ?;
     SQL
+
+    DB[:conn]
   end
 end
