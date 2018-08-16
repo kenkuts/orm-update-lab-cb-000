@@ -49,7 +49,6 @@ class Student
       UPDATE students SET name = ?, grade = ?
       WHERE id = ?;
     SQL
-    binding.pry
     DB[:conn].execute(sql, self.name, self.grade, self.id)
     self.new_from_db(DB[:conn].execute("SELECT * FROM students WHERE id = (?)", self.id ).flatten)
 
