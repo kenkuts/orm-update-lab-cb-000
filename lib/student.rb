@@ -72,6 +72,6 @@ class Student
       WHERE name = ?;
     SQL
     binding.pry
-    new_from_db(DB[:conn].execute(sql, name))
+    sel.fnew_from_db(DB[:conn].execute(sql, name))
   end
 end
