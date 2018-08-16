@@ -51,8 +51,7 @@ class Student
     SQL
     binding.pry
     DB[:conn].execute(sql, self.name, self.grade, self.id)
-    data = DB[:conn].execute("SELECT * FROM students WHERE id = (?)", self.id ).flatten
-    self.name = data[1]
+    self.new_from_db(DB[:conn].execute("SELECT * FROM students WHERE id = (?)", self.id ).flatten)
 
   end
 
