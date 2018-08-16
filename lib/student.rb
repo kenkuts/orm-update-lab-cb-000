@@ -52,6 +52,7 @@ class Student
 
     DB[:conn].execute(sql, self.name, self.grade, self.id)
     data = DB[:conn].execute("SELECT * FROM students WHERE id = (?)", self.id ).flatten
+    binding.pry
     new_obj = self.new(data[0], data[1], data[2])
     new_obj
   end
