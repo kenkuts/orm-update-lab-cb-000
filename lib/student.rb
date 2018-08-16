@@ -44,10 +44,6 @@ class Student
     end
   end
 
-  def self.new_from_db(row)
-    self.new(row[0], row[1], row[2])
-  end
-
   def update
     sql = <<-SQL
       UPDATE students SET name = ?, grade = ?
@@ -74,4 +70,9 @@ class Student
 
     self.new_from_db(DB[:conn].execute(sql, name).flatten)
   end
+
+  def self.new_from_db(row)
+    self.new(row[0], row[1], row[2])
+  end
+
 end
