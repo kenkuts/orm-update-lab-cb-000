@@ -51,9 +51,8 @@ class Student
     SQL
 
     DB[:conn].execute(sql, self.name, self.grade, self.id)
-    data = DB[:conn].execute("SELECT * FROM students WHERE id = (?)", self.id ).flatten
-    new_obj = self.new(data[0], data[1], data[2])
-    new_obj
+    self.new_from_dbDB[:conn].execute("SELECT * FROM students WHERE id = (?)", self.id ).flatten
+
   end
 
   def self.create(name, grade)
