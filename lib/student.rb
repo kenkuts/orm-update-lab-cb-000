@@ -55,4 +55,8 @@ class Student
     new_obj = self.new(data[0], data[1], data[2])
     new_obj
   end
+
+  def create
+
+  end
 end
