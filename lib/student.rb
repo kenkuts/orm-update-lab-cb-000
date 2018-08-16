@@ -44,6 +44,10 @@ class Student
     end
   end
 
+  def self.new_from_db(row)
+    self.new(row[0], row[1], row[2])
+  end
+
   def update
     sql = <<-SQL
       UPDATE students SET name = ?, grade = ?
@@ -60,10 +64,6 @@ class Student
     new_obj = self.new(name, grade)
     new_obj.save
     new_obj
-  end
-
-  def self.new_from_db(row)
-    self.new(row[0], row[1], row[2])
   end
 
   def self.find_by_name(name)
