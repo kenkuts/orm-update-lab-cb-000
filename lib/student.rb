@@ -63,9 +63,10 @@ class Student
   end
 
   def self.new_from_db(row)
+    binding.pry
     row.map do |data|
       self.new(data[0], data[1], data[2])
-    end.first
+    end
   end
 
 end
