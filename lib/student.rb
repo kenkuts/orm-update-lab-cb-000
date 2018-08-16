@@ -65,7 +65,7 @@ class Student
   def self.new_from_db(row)
     row.map do |data|
       self.new(data[0], data[1], data[2])
-    end
+    end.first
   end
 
 end
